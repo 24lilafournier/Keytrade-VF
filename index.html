@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Guide de préparation à l'entretien</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+
+/* ── TOKENS ── */
+:root {
+  --page:       #F5F1EA;
+  --surface:    #FFFFFF;
+  --surface-2:  #FAF8F4;
+  --ink:        #141210;
+  --muted:      #6B6357;
+  --border:     #E3DDD4;
+  --border-mid: #C8C0B4;
+  --forest:     #1C3A14;
+  --forest-mid: #2D5E1E;
+  --forest-soft:#E8F0E3;
+  --forest-line:#4A7A35;
+  --ochre:      #8A6510;
+  --ochre-soft: #F5EDD5;
+  --ochre-line: #D4B87A;
+  --red:        #9B1C1C;
+  --red-soft:   #F5E5E5;
+  --red-line:   #DDB0B0;
+  --blue:       #1A3FAA;
+  --blue-soft:  #E8EDF8;
+  --blue-line:  #8FA8D4;
+  --r-sm: 4px;
+  --r-md: 8px;
+  --r-lg: 12px;
+  --r-pill: 999px;
+}
+
+/* ── RESET ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; scroll-behavior: smooth; }
+body {
+  background: var(--page);
+  color: var(--ink);
+  font-family: 'Figtree', ui-sans-serif, system-ui, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+button, input { font: inherit; }
+:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+.sr-only {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+
+/* ── LAYOUT ── */
+.page { max-width: 1100px; margin: 0 auto; padding: 2rem 1.5rem 5rem; }
+
+/* ── TOPBAR ── */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+.brand {
+  display: flex; align-items: center; gap: .625rem;
+  font-weight: 600; font-size: .9375rem;
+  color: var(--forest); letter-spacing: -.01em;
+}
+.brand-mark {
+  width: 28px; height: 28px;
+  border-radius: var(--r-sm);
+  background: var(--forest); color: #fff;
+  display: grid; place-items: center;
+  font-size: .75rem; font-weight: 700;
+}
+.search-wrap input {
+  width: 220px;
+  border: 1px solid var(--border-mid);
+  background: var(--surface);
+  border-radius: var(--r-pill);
+  padding: .5rem 1rem;
+  color: var(--ink); font-size: .875rem;
+  transition: border-color .15s;
+}
+.search-wrap input:focus { border-color: var(--forest); outline: none; }
+.search-wrap input::placeholder { color: var(--muted); }
+
+/* ── HERO ── */
+.hero {
+  background: var(--forest);
+  border-radius: var(--r-lg);
+  padding: 2.5rem 2.5rem 2rem;
+  margin-top: 1.75rem;
+  position: relative; overflow: hidden;
+}
+.hero::after {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 80% 50%, rgba(255,255,255,.04), transparent 60%);
+  pointer-events: none;
+}
+.hero-eyebrow {
+  font-size: .6875rem; font-weight: 600;
+  letter-spacing: .14em; text-transform: uppercase;
+  color: rgba(255,255,255,.5);
+  margin-bottom: 1.25rem;
+  display: flex; align-items: center; gap: .5rem;
+}
+.hero-eyebrow::before {
+  content: ''; width: 6px; height: 6px;
+  border-radius: 50%; background: rgba(255,255,255,.4); flex-shrink: 0;
+}
+.hero-title {
+  font-family: 'Figtree', ui-sans-serif, sans-serif;
+  font-size: clamp(2rem, 4.5vw, 3.25rem);
+  font-weight: 700; line-height: 1.05; letter-spacing: -.03em;
+  color: #F5F1EA; max-width: 680px; margin-bottom: 1rem;
+}
+.hero-sub {
+  font-size: 1rem; color: rgba(245,241,234,.65);
+  max-width: 560px; line-height: 1.65; margin-bottom: .5rem;
+}
+.hero-disclaimer {
+  font-size: .8125rem; color: rgba(245,241,234,.4);
+  max-width: 560px; line-height: 1.55; margin-bottom: 1.75rem;
+}
+.hero-meta { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1.75rem; }
+.hero-pill {
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.15);
+  color: rgba(245,241,234,.8);
+  border-radius: var(--r-pill);
+  padding: .375rem .75rem; font-size: .8125rem; font-weight: 500;
+}
+.progress-label {
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: .75rem; color: rgba(245,241,234,.5);
+  margin-bottom: .5rem; font-weight: 500;
+}
+.progress-track { height: 3px; background: rgba(255,255,255,.12); border-radius: 999px; overflow: hidden; }
+.progress-fill  { height: 100%; background: #9BC984; border-radius: 999px; transition: width .4s ease; width: 0%; }
+
+/* ── INSIGHTS ── */
+.insights { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.25rem; }
+.insight-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 1.375rem 1.5rem;
+}
+.section-label {
+  font-size: .6875rem; font-weight: 600; letter-spacing: .12em;
+  text-transform: uppercase; margin-bottom: .875rem;
+  display: flex; align-items: center; gap: .4375rem;
+}
+.section-label::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: currentColor; flex-shrink: 0; }
+.section-label.forest { color: var(--forest); }
+.section-label.red    { color: var(--red); }
+.section-label.muted  { color: var(--muted); }
+.bullet-list { list-style: none; display: grid; gap: .625rem; }
+.bullet-list li {
+  font-size: .9375rem; line-height: 1.55;
+  padding-left: 1rem; position: relative;
+}
+.bullet-list li::before {
+  content: ''; position: absolute; left: 0; top: .62em;
+  width: 4px; height: 4px; border-radius: 50%; background: var(--border-mid);
+}
+
+/* ── URGENT ── */
+.urgent {
+  margin-top: 1.25rem;
+  background: var(--red-soft);
+  border: 1px solid var(--red-line);
+  border-radius: var(--r-lg);
+  padding: 1.375rem 1.5rem;
+}
+.urgent-title {
+  font-family: 'Figtree', ui-sans-serif, sans-serif;
+  font-size: 1.25rem; font-weight: 700;
+  color: var(--red); margin-bottom: .375rem;
+}
+.urgent-purpose { font-size: .9rem; color: #7A3A3A; margin-bottom: 1rem; line-height: 1.55; }
+.urgent .bullet-list li { color: #4A1C1C; }
+.urgent .bullet-list li::before { background: #C06060; }
+.urgent details {
+  margin-top: 1rem;
+  background: rgba(155,28,28,.07);
+  border: 1px solid var(--red-line);
+  border-radius: var(--r-md);
+  padding: .875rem 1rem;
+}
+.urgent details summary { font-weight: 600; color: var(--red); cursor: pointer; font-size: .9rem; }
+.urgent details p { margin-top: .5rem; font-size: .9rem; line-height: 1.6; color: #4A1C1C; }
+
+/* ── ENGLISH KIT ── */
+.kit {
+  margin-top: 1.25rem;
+  background: var(--forest-soft);
+  border: 1px solid var(--forest-line);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+}
+.kit > summary {
+  padding: 1rem 1.5rem; cursor: pointer; list-style: none;
+  font-weight: 600; color: var(--forest); font-size: .9375rem;
+  display: flex; align-items: center; gap: .625rem;
+}
+.kit > summary::-webkit-details-marker { display: none; }
+.kit-chevron { margin-left: auto; font-size: .75rem; color: var(--forest-mid); transition: transform .2s; }
+.kit[open] .kit-chevron { transform: rotate(180deg); }
+.kit-body { padding: 0 1.5rem 1.25rem; border-top: 1px solid var(--forest-line); }
+.kit-body .bullet-list { margin-top: .875rem; }
+.kit-body .bullet-list li { font-size: .9rem; line-height: 1.6; color: #1A3A14; }
+.kit-body .bullet-list li::before { background: var(--forest-line); }
+.kit-body details {
+  margin-top: .875rem;
+  background: rgba(45,94,30,.08);
+  border: 1px solid var(--forest-line);
+  border-radius: var(--r-md);
+  padding: .75rem 1rem;
+}
+.kit-body details summary { color: var(--forest); font-weight: 600; cursor: pointer; font-size: .875rem; }
+.kit-body details p { margin-top: .5rem; font-size: .875rem; line-height: 1.6; color: #1A3A14; }
+
+/* ── STAGES ── */
+.stages-section { margin-top: 2rem; }
+.section-header { margin-bottom: 1rem; }
+.section-header h2 {
+  font-family: 'Figtree', ui-sans-serif, sans-serif;
+  font-size: 1.5rem; font-weight: 700; letter-spacing: -.02em;
+}
+.section-header p { font-size: .9rem; color: var(--muted); margin-top: .25rem; max-width: 540px; line-height: 1.55; }
+
+.stage-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: .75rem; }
+.stage-btn {
+  appearance: none;
+  border: 1px solid var(--border); background: var(--surface);
+  border-radius: var(--r-lg); padding: 1.125rem 1rem;
+  text-align: left; cursor: pointer;
+  transition: border-color .15s, background .15s, box-shadow .15s;
+  min-height: 120px; color: var(--ink);
+}
+.stage-btn:hover { border-color: var(--forest-line); background: var(--surface-2); }
+.stage-btn[aria-selected="true"] {
+  border-color: var(--forest); background: var(--forest);
+  box-shadow: 0 4px 16px rgba(28,58,20,.2);
+}
+.stage-btn .stage-icon { font-size: 1.125rem; margin-bottom: .625rem; display: block; }
+.stage-btn h3 { font-size: .9375rem; font-weight: 600; margin-bottom: .25rem; line-height: 1.3; }
+.stage-btn p  { font-size: .8125rem; line-height: 1.45; color: var(--muted); }
+.stage-btn[aria-selected="true"] h3 { color: #F5F1EA; }
+.stage-btn[aria-selected="true"] p  { color: rgba(245,241,234,.65); }
+
+.path-panel {
+  margin-top: .875rem;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r-lg); padding: 1.375rem 1.5rem;
+  display: grid; grid-template-columns: .9fr 1.1fr; gap: 1.5rem;
+}
+.path-panel h2 {
+  font-family: 'Figtree', ui-sans-serif, sans-serif;
+  font-size: 1.125rem; font-weight: 700;
+  color: var(--forest); margin-bottom: .375rem;
+}
+.path-panel > div > p { font-size: .9rem; color: var(--muted); line-height: 1.55; }
+
+.path-list { list-style: none; display: grid; gap: .5rem; counter-reset: path-counter; }
+.path-item {
+  background: var(--forest-soft); border: 1px solid var(--forest-line);
+  border-radius: var(--r-md); padding: .5rem .75rem;
+  font-size: .875rem; font-weight: 600; color: var(--forest);
+  counter-increment: path-counter;
+  display: flex; align-items: center; gap: .5rem;
+}
+.path-item::before {
+  content: counter(path-counter);
+  width: 18px; height: 18px; border-radius: 50%;
+  background: var(--forest); color: #fff;
+  font-size: .6875rem; font-weight: 700;
+  display: grid; place-items: center; flex-shrink: 0;
+}
+
+/* ── CARDS ── */
+.cards-wrap { margin-top: 1.5rem; }
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  display: flex; flex-direction: column;
+  transition: border-color .15s, box-shadow .15s;
+}
+.card:hover { border-color: var(--border-mid); box-shadow: 0 4px 16px rgba(20,18,16,.06); }
+.card.hidden   { display: none; }
+.card.is-read  { opacity: .55; }
+
+.card-body { padding: 1.25rem 1.375rem; display: flex; flex-direction: column; flex: 1; }
+.card-top  { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: .75rem; }
+
+/* priority label replacing the accent bar */
+.priority-label {
+  font-size: .6rem; font-weight: 700; letter-spacing: .1em;
+  text-transform: uppercase; padding: .25rem .5rem;
+  border-radius: var(--r-sm); border: 1px solid transparent;
+  flex-shrink: 0;
+}
+.priority-label.core   { background: var(--forest-soft); color: var(--forest);  border-color: var(--forest-line); }
+.priority-label.alert  { background: var(--red-soft);    color: var(--red);     border-color: var(--red-line); }
+.priority-label.medium { background: var(--ochre-soft);  color: var(--ochre);   border-color: var(--ochre-line); }
+.priority-label.soft   { background: var(--surface-2);   color: var(--muted);   border-color: var(--border); }
+
+/* interlocutor badges */
+.badges { display: flex; flex-wrap: wrap; gap: .375rem; margin-bottom: .75rem; }
+.badge {
+  font-size: .625rem; font-weight: 700; letter-spacing: .08em;
+  text-transform: uppercase; padding: .3rem .5rem;
+  border-radius: var(--r-sm); border: 1px solid transparent;
+}
+.badge.rh         { background: var(--ochre-soft);  color: var(--ochre);  border-color: var(--ochre-line); }
+.badge.manager    { background: var(--forest-soft);  color: var(--forest); border-color: var(--forest-line); }
+.badge.strategique{ background: var(--blue-soft);    color: var(--blue);   border-color: var(--blue-line); }
+.badge.tous       { background: var(--surface-2);    color: var(--muted);  border-color: var(--border); }
+.badge.high       { background: var(--red-soft);     color: var(--red);    border-color: var(--red-line); }
+
+/* seen toggle */
+.seen-check {
+  width: 22px; height: 22px; border-radius: 50%;
+  border: 1.5px solid var(--border-mid); background: transparent;
+  cursor: pointer; flex-shrink: 0;
+  display: grid; place-items: center;
+  transition: border-color .15s, background .15s;
+  color: transparent; font-size: .875rem;
+  appearance: none;
+}
+.seen-check:hover { border-color: var(--forest); }
+.seen-check.done  { background: var(--forest); border-color: var(--forest); color: #fff; }
+
+.card h3 {
+  font-family: 'Figtree', ui-sans-serif, sans-serif;
+  font-size: 1.125rem; font-weight: 700;
+  line-height: 1.2; letter-spacing: -.02em;
+  margin-bottom: .5rem;
+}
+.card-purpose { font-size: .875rem; color: var(--muted); line-height: 1.55; margin-bottom: .875rem; }
+.card .bullet-list { margin-bottom: .875rem; }
+.card .bullet-list li { font-size: .9rem; }
+.card .bullet-list li:first-child { font-weight: 500; }
+
+.card details {
+  background: var(--surface-2); border: 1px solid var(--border);
+  border-radius: var(--r-md); padding: .75rem 1rem; margin-top: auto;
+}
+.card details summary { font-weight: 600; color: var(--forest); cursor: pointer; font-size: .875rem; }
+.card details p { margin-top: .5rem; font-size: .875rem; line-height: 1.6; color: var(--muted); }
+
+/* ── AI PANELS ── */
+.ai-panels { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.5rem; }
+.ai-panel {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r-lg); padding: 1.25rem 1.375rem;
+}
+.ai-panel h2 {
+  font-family: 'Figtree', ui-sans-serif, sans-serif;
+  font-size: 1rem; font-weight: 700; margin-bottom: .5rem;
+}
+.ai-panel p { font-size: .875rem; color: var(--muted); line-height: 1.6; }
+
+/* ── NOTE & FOOTER ── */
+.note {
+  margin-top: 1.25rem; padding: 1rem 1.25rem;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  font-size: .875rem; color: var(--muted); line-height: 1.6;
+}
+footer { margin-top: 1.5rem; font-size: .8125rem; color: var(--muted); }
+footer button {
+  background: none; border: none; color: var(--muted);
+  text-decoration: underline; cursor: pointer; font: inherit; padding: 0;
+}
+footer button:hover { color: var(--forest); }
+
+/* ── STATUS / EMPTY ── */
+.status-bar { margin-top: 1rem; font-size: .875rem; color: var(--muted); font-weight: 500; min-height: 1.25rem; }
+.empty-state { grid-column: 1 / -1; text-align: center; padding: 3rem 1rem; color: var(--muted); font-size: .9375rem; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .insights, .stage-grid, .cards, .ai-panels { grid-template-columns: 1fr 1fr; }
+  .path-panel { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .page        { padding: 1rem .875rem 3rem; }
+  .hero        { padding: 1.75rem 1.25rem 1.5rem; }
+  .hero-title  { font-size: 1.75rem; }
+  .insights, .cards, .ai-panels { grid-template-columns: 1fr; }
+  .stage-grid  { grid-template-columns: 1fr 1fr; }
+  .search-wrap input { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: .01ms !important; }
+}
+@media print {
+  body { background: #fff; }
+  .search-wrap, .seen-check { display: none; }
+  .card, .hero, .ai-panel, .note { box-shadow: none; break-inside: avoid; }
+  details { display: block; }
+  details summary { display: none; }
+}
+
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-mark">P</div>
+      Strategic Prep OS
+    </div>
+    <form class="search-wrap" role="search" onsubmit="return false">
+      <label for="searchInput" class="sr-only">Rechercher une carte</label>
+      <input id="searchInput" type="search" autocomplete="off" placeholder="Rechercher…"/>
+    </form>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <p class="hero-eyebrow" id="heroEyebrow"></p>
+      <h1 class="hero-title"  id="page-title"></h1>
+      <p class="hero-sub"       id="heroSubtitle"></p>
+      <p class="hero-disclaimer" id="heroDisclaimer"></p>
+      <div class="hero-meta">
+        <span class="hero-pill" id="metaCandidate"></span>
+        <span class="hero-pill" id="metaRole"></span>
+        <span class="hero-pill" id="metaCompany"></span>
+      </div>
+      <div class="progress-label">
+        <span>Progression</span>
+        <span id="progressLabel">0 / 0</span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+    </section>
+
+    <section class="insights">
+      <div class="insight-box">
+        <div class="section-label forest">Priorités de préparation</div>
+        <ul class="bullet-list" id="prioritiesList"></ul>
+      </div>
+      <div class="insight-box">
+        <div class="section-label red">Risques à anticiper</div>
+        <ul class="bullet-list" id="risksList"></ul>
+      </div>
+    </section>
+
+    <section id="urgentPanel" hidden>
+      <div class="urgent">
+        <div class="section-label red">Attention immédiate</div>
+        <h2 class="urgent-title"   id="urgent-title"></h2>
+        <p  class="urgent-purpose" id="urgentPurpose"></p>
+        <ul class="bullet-list"    id="urgentList"></ul>
+        <div id="urgentDetails"></div>
+      </div>
+    </section>
+
+    <details class="kit" id="englishKitBanner" style="display:none">
+      <summary>
+        🇬🇧 English Survival Kit — toujours disponible
+        <span class="kit-chevron" aria-hidden="true">▾</span>
+      </summary>
+      <div class="kit-body" id="englishKitBody"></div>
+    </details>
+
+    <section class="stages-section">
+      <div class="section-header">
+        <h2>Quel rendez-vous préparez-vous ?</h2>
+        <p>Sélectionnez votre parcours pour afficher uniquement les cartes pertinentes.</p>
+      </div>
+      <div class="stage-grid" id="stageGrid" role="tablist"></div>
+      <div class="path-panel" id="path-panel" role="tabpanel" aria-live="polite">
+        <div>
+          <h2 id="pathTitle">Vue complète</h2>
+          <p  id="pathText"></p>
+        </div>
+        <ol class="path-list" id="pathList"></ol>
+      </div>
+    </section>
+
+    <div class="cards-wrap">
+      <div class="status-bar" id="statusBar" aria-live="polite"></div>
+      <div class="cards" id="cards"></div>
+    </div>
+
+    <section class="ai-panels">
+      <div class="ai-panel">
+        <div class="section-label muted">Analyse</div>
+        <h2>CV analysé</h2>
+        <p id="aiCvText"></p>
+      </div>
+      <div class="ai-panel">
+        <div class="section-label muted">Analyse</div>
+        <h2>Offre analysée</h2>
+        <p id="aiJobText"></p>
+      </div>
+      <div class="ai-panel">
+        <div class="section-label muted">Recommandations</div>
+        <h2>Synthèse</h2>
+        <p id="aiRecoText"></p>
+      </div>
+    </section>
+
+    <aside class="note" id="footerNote"></aside>
+
+  </main>
+
+  <footer>
+    <p>Document privé de préparation à l'entretien.
+      <button onclick="window.print()">Exporter en PDF</button>
+    </p>
+  </footer>
+
+</div>
+<script>
+/* ================================================================
+   GUIDE_DATA — coller ici le JSON généré par le générateur.
+   Ne pas modifier le reste du fichier.
+   ================================================================ */
+const GUIDE_DATA = {
+  "meta": {
+    "candidate": "Lila Fournier",
+    "role": "Operational Risk Officer",
+    "company": "Keytrade Bank",
+    "preparedFor": "Risk Management Department – Keytrade Bank (Crédit Mutuel Arkéa Group)"
+  },
+  "hero": {
+    "eyebrow": "Préparation à l'entretien d'embauche",
+    "title": "Guide de préparation à l'entretien",
+    "subtitle": "Guide de préparation privé conçu pour votre entretien Operational Risk Officer chez Keytrade Bank.",
+    "disclaimer": "Ce document repose sur l'analyse de la fiche de poste et des informations disponibles publiquement. Il ne constitue pas une vérité établie : certains éléments sont des hypothèses de travail, d'autres restent à confirmer directement en entretien."
+  },
+  "stages": [
+    {
+      "id": "complet",
+      "icon": "🧭",
+      "title": "Vue complète",
+      "description": "Toutes les cartes, sans priorisation par interlocuteur."
+    },
+    {
+      "id": "rh",
+      "icon": "👤",
+      "title": "RH",
+      "description": "Motivation, cohérence du parcours, fit, attentes salariales et communication."
+    },
+    {
+      "id": "manager",
+      "icon": "🎯",
+      "title": "Manager opérationnel",
+      "description": "Crédibilité métier, exemples concrets, autonomie, jugement et maîtrise du poste."
+    },
+    {
+      "id": "strategique",
+      "icon": "🧑‍💼",
+      "title": "Entretien stratégique",
+      "description": "Vision business, maturité, impact attendu et questions stratégiques."
+    }
+  ],
+  "recommendations": {
+    "priorities": [
+      "Construire un pont explicite entre votre expérience RCSA multi-départements chez Carrefour et les attentes TPRM du poste.",
+      "Préparer un exemple de suivi de plan de remédiation avec parties prenantes externes, issu de votre expérience Carrefour ou HSBC.",
+      "Valoriser votre maîtrise du reporting KRIs pour comités seniors – point couvert par Carrefour Belgium et HSBC France."
+    ],
+    "risks": [
+      "Absence de TPRM explicite dans votre CV : le recruteur peut douter de l'opérationnalité immédiate sur le périmètre fournisseurs.",
+      "Profil perçu comme contrôleur interne généraliste plutôt que spécialiste risque opérationnel bancaire orienté tiers.",
+      "Niveau A1 en néerlandais dans un contexte belge trilingue peut être évalué en entretien et fragiliser la candidature."
+    ]
+  },
+  "focusContent": {
+    "complet": {
+      "title": "Vue complète",
+      "text": "Parcours solide en contrôle interne et risque bancaire, mais absence de TPRM explicite à compenser par la transférabilité des compétences RCSA et remédiation.",
+      "items": ["Présentez-vous", "Pourquoi cette entreprise ?", "Points techniques du rôle", "Risques de perception"]
+    },
+    "rh": {
+      "title": "Parcours RH",
+      "text": "Le RH cherchera à valider la cohérence du parcours, la motivation pour Keytrade et la stabilité géographique depuis Etterbeek.",
+      "items": ["Présentez-vous", "Pourquoi cette entreprise ?", "Questions RH sensibles", "À faire / À éviter"]
+    },
+    "manager": {
+      "title": "Parcours manager opérationnel",
+      "text": "Le manager évaluera la capacité à opérer sur le TPRM sans formation longue et la rigueur dans le suivi de remédiation fournisseurs.",
+      "items": ["Points techniques du rôle", "Risques de perception", "STAR Stories", "Questions à poser"]
+    },
+    "strategique": {
+      "title": "Parcours entretien stratégique",
+      "text": "L'interlocuteur stratégique évaluera la compréhension des enjeux de gouvernance du risque tiers dans une banque digitale en forte croissance.",
+      "items": ["Risques de perception", "Pourquoi cette entreprise ?", "Points techniques du rôle", "Vision business"]
+    }
+  },
+  "urgentAttention": {
+    "title": "J-1 : les 3 points à verrouiller",
+    "purpose": "Positionnement, preuve concrète, piège à éviter.",
+    "items": [
+      "Risque de positionnement : votre CV affiche un profil contrôle interne – articulez dès le pitch le lien direct avec le risque opérationnel tiers.",
+      "Preuve à préparer : une situation de coordination avec une entité ou partie prenante externe sur un plan de remédiation, issue de Carrefour ou HSBC.",
+      "Piège à éviter : assimiler votre expérience KYC/EDD chez HSBC au TPRM – les périmètres sont distincts et le recruteur bancaire le sait."
+    ],
+    "details": {
+      "summary": "Mini-script mental",
+      "text": "Mon parcours couvre six ans de contrôle interne et risque en environnement bancaire et retail.<br>Ce poste est la continuité logique : passer de l'évaluation des contrôles internes à la surveillance du risque généré par les tiers.<br>Je n'ai pas de TPRM de titre, mais j'ai les fondamentaux opérationnels – RCSA, KRIs, remédiation – pour être opérationnelle rapidement."
+    }
+  },
+  "cards": [
+    {
+      "id": "introduce_yourself",
+      "type": "core",
+      "stages": ["rh"],
+      "badges": [
+        { "label": "RH", "className": "rh" },
+        { "label": "Point d'attention", "className": "high" }
+      ],
+      "title": "Présentez-vous",
+      "purpose": "Construire un pitch en 90 secondes ancré sur les éléments de votre CV les plus pertinents pour ce poste.",
+      "items": [
+        "Ouvrir sur six ans d'expérience en risque et contrôle en environnement bancaire et retail, en Europe et en Amérique du Nord.",
+        "Mettre en avant la double compétence : évaluation COSO et coordination RCSA multi-départements chez Carrefour, suivi de KRIs pour comités seniors.",
+        "Conclure sur la volonté de spécialisation en risque opérationnel tiers dans une banque digitale en croissance comme Keytrade."
+      ],
+      "details": {
+        "summary": "Structure recommandée",
+        "text": "1. Ancrage parcours (6 ans, banque + retail, Europe + Canada)<br>2. Compétence clé pour le poste (RCSA, remédiation, reporting risque comités)<br>3. Pivot vers Keytrade (risque tiers, banque digitale, spécialisation intentionnelle)<br>Durée cible : 90 secondes maximum."
+      }
+    },
+    {
+      "id": "why_company",
+      "type": "core",
+      "stages": ["rh", "strategique"],
+      "badges": [
+        { "label": "RH", "className": "rh" },
+        { "label": "Entretien stratégique", "className": "strategique" },
+        { "label": "Point d'attention", "className": "high" }
+      ],
+      "title": "Pourquoi cette entreprise ?",
+      "purpose": "Relier votre parcours au contexte spécifique de Keytrade Bank sans motivation générique.",
+      "items": [
+        "Relier votre expérience belge chez Carrefour Belgium à la dynamique locale de Keytrade – banque digitale en forte croissance, basée à Bruxelles.",
+        "Keytrade appartient au groupe Crédit Mutuel Arkéa : clarifier en entretien le niveau d'intégration des politiques risque groupe vs périmètre local.",
+        "La scale-up de Keytrade (base clients doublée en 5 ans) implique une dépendance croissante aux tiers – contexte directement lié à votre spécialisation visée."
+      ]
+    },
+    {
+      "id": "technical_points",
+      "type": "core",
+      "stages": ["manager", "strategique"],
+      "badges": [
+        { "label": "Manager opérationnel", "className": "manager" }
+      ],
+      "title": "Points techniques du rôle",
+      "purpose": "Identifier ce que le poste requiert, ce que votre CV prouve et ce qui reste à préparer avec prudence.",
+      "items": [
+        "TPRM (évaluation, onboarding, lifecycle fournisseurs) : absent de votre CV – à préparer avec prudence ; s'appuyer sur la logique RCSA et COSO maîtrisée.",
+        "Suivi des KRIs fournisseurs et reporting comités : couvert par Carrefour (KRIs opérationnels) et HSBC (seuils conformité) – point solide et directement valorisable.",
+        "Revue de documentation fournisseurs (SOC reports, questionnaires sécurité, cadres de contrôle) : absente du CV – à clarifier si des revues tiers ont été réalisées."
+      ],
+      "details": {
+        "summary": "Questions probables",
+        "text": "« Avez-vous déjà évalué un fournisseur ou prestataire dans le cadre d'un processus d'onboarding ? »<br>« Comment avez-vous géré un plan de remédiation impliquant une partie prenante externe ? »<br>« Avez-vous une expérience avec des outils GRC ou des systèmes de gestion du risque fournisseur ? »"
+      }
+    },
+    {
+      "id": "perception_risks",
+      "type": "alert",
+      "stages": ["manager", "strategique"],
+      "badges": [
+        { "label": "Manager opérationnel", "className": "manager" },
+        { "label": "Entretien stratégique", "className": "strategique" },
+        { "label": "Point d'attention", "className": "high" }
+      ],
+      "title": "Risques de perception",
+      "purpose": "Anticiper les lectures négatives de votre profil et proposer un recadrage crédible avant qu'elles s'installent.",
+      "items": [
+        "Profil contrôleur interne sans TPRM explicite : le manager peut douter de l'opérationnalité immédiate sur l'évaluation et le suivi des fournisseurs.",
+        "Transition Carrefour retail vers banque digitale peut sembler opportuniste si la narrative de spécialisation en risque opérationnel n'est pas articulée clairement.",
+        "Le niveau A1 en néerlandais dans un contexte belge trilingue peut être perçu comme un frein opérationnel – à adresser sans attendre qu'on vous le demande."
+      ],
+      "details": {
+        "summary": "Reframing recommandé",
+        "text": "Sur le TPRM : « Je n'ai pas de TPRM de titre, mais j'ai coordonné des RCSA sur 15 départements et suivi des plans de remédiation avec parties prenantes – la logique est transférable. »<br>Sur le néerlandais : « Je suis en apprentissage actif ; mon environnement Carrefour Belgium était bilingue FR/EN au quotidien. »"
+      }
+    },
+    {
+      "id": "star_stories",
+      "type": "core",
+      "stages": ["manager"],
+      "badges": [
+        { "label": "Manager opérationnel", "className": "manager" }
+      ],
+      "title": "STAR Stories",
+      "purpose": "Sélectionner vos situations les plus utilisables en format STAR pour ce poste.",
+      "items": [
+        "Carrefour Belgium – RCSA sur 15 départements : à structurer avec votre rôle exact, les parties prenantes impliquées et les résultats obtenus.",
+        "Carrefour Belgium – suivi de plans de remédiation (80% de taux d'implémentation) : à préparer avec la méthode utilisée et les obstacles rencontrés.",
+        "HSBC France – escalade de violations réglementaires dans le cadre des Trois Lignes de Défense : à clarifier sur votre décision autonome et le processus suivi."
+      ],
+      "details": {
+        "summary": "Format recommandé",
+        "text": "Situation → Tâche → Action (votre rôle précis) → Résultat mesurable ou observable.<br>Durée cible par story : 2 minutes maximum."
+      }
+    },
+    {
+      "id": "do_dont",
+      "type": "medium",
+      "stages": ["rh", "manager", "strategique"],
+      "badges": [
+        { "label": "Tous entretiens", "className": "tous" }
+      ],
+      "title": "À faire / À éviter",
+      "purpose": "Conseils comportementaux et de formulation spécifiques à votre profil et à ce poste.",
+      "items": [
+        "À faire : utiliser les termes COSO, RCSA et KRIs dans vos réponses – ils figurent dans votre CV et dans la fiche de poste, leur usage ancre la crédibilité.",
+        "À faire : poser une question sur la maturité actuelle du framework TPRM chez Keytrade – signal d'une posture contributive, pas seulement exécutante.",
+        "À éviter : présenter votre expérience KYC/EDD chez HSBC comme équivalente à de la gestion du risque fournisseur – le périmètre est distinct."
+      ]
+    },
+    {
+      "id": "sensitive_rh_questions",
+      "type": "medium",
+      "stages": ["rh"],
+      "badges": [
+        { "label": "RH", "className": "rh" }
+      ],
+      "title": "Questions RH sensibles",
+      "purpose": "Préparer les questions RH potentiellement déstabilisantes issues de votre CV et de la fiche de poste.",
+      "items": [
+        "Transition Carrefour retail vers banque digitale : préparer une narrative claire sur la spécialisation volontaire en risque opérationnel bancaire, sans hésitation.",
+        "Mobilité et localisation : votre adresse Etterbeek et le siège bruxellois de Keytrade sont un avantage à mentionner spontanément pour rassurer sur la stabilité.",
+        "Disponibilité : la date de fin de contrat Carrefour Belgium est indiquée 2026 – préciser si vous êtes immédiatement disponible ou si un préavis est en cours."
+      ]
+    },
+    {
+      "id": "questions_to_ask",
+      "type": "medium",
+      "stages": ["manager", "strategique"],
+      "badges": [
+        { "label": "Manager opérationnel", "className": "manager" },
+        { "label": "Entretien stratégique", "className": "strategique" }
+      ],
+      "title": "Questions à poser",
+      "purpose": "Questions à poser qui démontrent votre compréhension du rôle et des enjeux de Keytrade.",
+      "items": [
+        "« Où en est le framework TPRM aujourd'hui – s'agit-il de le consolider, de l'étendre ou de le construire sur certaines dimensions ? »",
+        "« Quels sont les principaux types de tiers couverts actuellement : prestataires IT, sous-traitants opérationnels, partenaires de distribution ? »",
+        "« Comment le Risk Management Department collabore-t-il concrètement avec la compliance et l'IT security sur les dossiers fournisseurs sensibles ? »"
+      ]
+    },
+    {
+      "id": "business_vision",
+      "type": "soft",
+      "stages": ["strategique"],
+      "badges": [
+        { "label": "Entretien stratégique", "className": "strategique" }
+      ],
+      "title": "Vision business",
+      "purpose": "Comprendre les enjeux organisationnels du rôle au-delà de l'exécution opérationnelle.",
+      "items": [
+        "Keytrade est une banque digitale en croissance rapide : la dépendance aux tiers s'accroît mécaniquement, rendant le TPRM structurellement critique.",
+        "Une défaillance fournisseur non anticipée peut impacter directement la continuité de service bancaire et la confiance des clients – enjeu de résilience opérationnelle.",
+        "Ce rôle est au croisement de la procurement, l'IT security, la compliance et le business : la valeur réside dans la coordination transversale, pas seulement l'analyse."
+      ]
+    },
+    {
+      "id": "english_survival_kit",
+      "type": "soft",
+      "stages": ["rh", "manager", "strategique"],
+      "badges": [
+        { "label": "English Kit", "className": "tous" }
+      ],
+      "title": "English Survival Kit",
+      "purpose": "Key sentences and vocabulary for an English-language interview segment, adapted to your background and this role.",
+      "items": [
+        "\"In my role at Carrefour Belgium, I led risk-based control reviews and coordinated RCSA across fifteen departments, giving me strong exposure to cross-functional risk governance.\"",
+        "\"I have not held a dedicated TPRM title, but the underlying skills – risk assessment, remediation tracking, and KRI reporting – are directly transferable to vendor risk oversight.\"",
+        "\"I would like to understand how Keytrade currently structures its third-party inventory and where the TPRM framework needs to be further developed.\""
+      ],
+      "details": {
+        "summary": "Useful vocabulary",
+        "text": "Third-party risk management (TPRM) · Vendor lifecycle · Risk classification · Outsourcing arrangements · Operational resilience · SOC reports · Control framework · Key risk indicators (KRIs) · Remediation tracking · Risk committee reporting"
+      }
+    }
+  ],
+  "aiPanels": {
+    "cv": "Votre CV établit une crédibilité solide en contrôle interne et risque opérationnel bancaire, avec un actif clé : la coordination de RCSA multi-départements et le suivi de remédiations mesurées.",
+    "jobOffer": "L'offre d'emploi requiert avant tout une capacité opérationnelle sur le TPRM – évaluation, onboarding et suivi des tiers – dans un environnement bancaire digital en forte croissance.",
+    "recommendations": "La priorité de préparation est de construire un pont explicite et factuel entre votre expérience en contrôle interne et les exigences concrètes du TPRM, sans surestimer le transfert."
+  },
+  "footerNote": "Note : ces recommandations s'appuient uniquement sur l'analyse de votre CV et de l'offre transmise ; elles vous aident à structurer votre préparation sans remplacer votre jugement pendant l'échange."
+};
+
+/* ── CONSTANTES ── */
+const PRIORITY_LABELS = {
+  core:   { text: 'Essentiel',        cls: 'core'   },
+  alert:  { text: 'Risque identifié', cls: 'alert'  },
+  medium: { text: 'Complémentaire',   cls: 'medium' },
+  soft:   { text: 'Bonus',            cls: 'soft'   },
+};
+const STAGE_ALIASES = { all:'tous', hm:'manager', final:'strategique', strategic:'strategique' };
+const RELEVANT_STAGES = ['rh','manager','strategique'];
+
+/* ── UTILS ── */
+const $ = id => document.getElementById(id);
+
+function esc(v) {
+  return String(v ?? '')
+    .replaceAll('&','&amp;').replaceAll('<','&lt;')
+    .replaceAll('>','&gt;').replaceAll('"','&quot;');
+}
+
+function safeHtml(v) {
+  return String(v ?? '').replace(/<(?!br\s*\/?)[^>]+>/gi, '');
+}
+
+function makeItems(items) {
+  return (items || []).map(i => `<li>${esc(i)}</li>`).join('');
+}
+
+function normalizeStage(id) {
+  const raw = String(id ?? '').trim().toLowerCase();
+  return STAGE_ALIASES[raw] ?? raw;
+}
+
+function sanitizeBadgeClass(c) {
+  const raw = String(c ?? '').trim().toLowerCase();
+  const norm = STAGE_ALIASES[raw] ?? raw;
+  return ['rh','manager','strategique','tous','high'].includes(norm) ? norm : 'tous';
+}
+
+function getBadgeClasses(card) {
+  return (card.badges || []).map(b => sanitizeBadgeClass(b.className));
+}
+
+function cardIsRelevant(card, stage) {
+  if (!card || stage === 'complet') return true;
+  const bc = getBadgeClasses(card);
+  return bc.includes(stage) || bc.includes('tous');
+}
+
+function makeBadgesHTML(card, stage) {
+  return (card.badges || [])
+    .filter(b => {
+      const cls = sanitizeBadgeClass(b.className);
+      return stage === 'complet' || cls === stage || cls === 'tous' || cls === 'high';
+    })
+    .map(b => `<span class="badge ${sanitizeBadgeClass(b.className)}">${esc(b.label)}</span>`)
+    .join('');
+}
+
+function makePriorityLabel(type) {
+  const p = PRIORITY_LABELS[type] ?? PRIORITY_LABELS.medium;
+  return `<span class="priority-label ${p.cls}">${p.text}</span>`;
+}
+
+/* ── SESSION STORAGE ── */
+function getSeen() {
+  try { return JSON.parse(sessionStorage.getItem('prepkit_seen') || '[]'); }
+  catch { return []; }
+}
+function saveSeen(ids) {
+  sessionStorage.setItem('prepkit_seen', JSON.stringify(ids));
+}
+
+/* ── STATE ── */
+let currentStage = 'complet';
+
+/* ── PROGRESS ── */
+function updateProgress() {
+  const seen  = getSeen();
+  const cards = (GUIDE_DATA.cards || []).filter(c => c.id !== 'english_survival_kit');
+  const total = cards.length;
+  const done  = seen.filter(id => cards.some(c => c.id === id)).length;
+  const pct   = total ? Math.round(done / total * 100) : 0;
+  $('progressFill').style.width  = pct + '%';
+  $('progressLabel').textContent = `${done} / ${total} cartes`;
+}
+
+/* ── TOGGLE SEEN ── */
+function markSeen(id) {
+  const seen    = getSeen();
+  const already = seen.includes(id);
+  const next    = already ? seen.filter(x => x !== id) : [...new Set([...seen, id])];
+  saveSeen(next);
+  document.querySelectorAll(`[data-seen-id="${id}"]`).forEach(el => {
+    el.classList.toggle('done', !already);
+    el.textContent = already ? '' : '✓';
+  });
+  document.querySelectorAll(`[data-card-id="${id}"]`).forEach(el =>
+    el.classList.toggle('is-read', !already)
+  );
+  updateProgress();
+}
+
+/* ── RENDER : META ── */
+function renderMeta() {
+  document.title = GUIDE_DATA.hero?.title || 'Guide de préparation';
+  $('heroEyebrow').textContent    = GUIDE_DATA.hero?.eyebrow    || '';
+  $('page-title').textContent     = GUIDE_DATA.hero?.title      || '';
+  $('heroSubtitle').textContent   = GUIDE_DATA.hero?.subtitle   || '';
+  $('heroDisclaimer').textContent = GUIDE_DATA.hero?.disclaimer || '';
+  $('metaCandidate').textContent  = 'Candidat : '   + (GUIDE_DATA.meta?.candidate || '—');
+  $('metaRole').textContent       = 'Poste : '      + (GUIDE_DATA.meta?.role      || '—');
+  $('metaCompany').textContent    = 'Entreprise : ' + (GUIDE_DATA.meta?.company   || '—');
+}
+
+/* ── RENDER : INSIGHTS ── */
+function renderInsights() {
+  $('prioritiesList').innerHTML = makeItems(GUIDE_DATA.recommendations?.priorities || []);
+  $('risksList').innerHTML      = makeItems(GUIDE_DATA.recommendations?.risks      || []);
+}
+
+/* ── RENDER : URGENT ── */
+function renderUrgent() {
+  const u     = GUIDE_DATA.urgentAttention;
+  const panel = $('urgentPanel');
+  if (!u) { panel.hidden = true; return; }
+  panel.hidden = false;
+  $('urgent-title').textContent   = u.title   || '';
+  $('urgentPurpose').textContent  = u.purpose || '';
+  $('urgentList').innerHTML       = makeItems(u.items || []);
+  $('urgentDetails').innerHTML    = u.details
+    ? `<details><summary>${esc(u.details.summary)}</summary><p>${safeHtml(u.details.text)}</p></details>`
+    : '';
+}
+
+/* ── RENDER : ENGLISH KIT ── */
+function renderEnglishKit() {
+  const card   = (GUIDE_DATA.cards || []).find(c => c.id === 'english_survival_kit');
+  const banner = $('englishKitBanner');
+  if (!card) { banner.style.display = 'none'; return; }
+  banner.style.display = 'block';
+  const isSeen = getSeen().includes(card.id);
+  $('englishKitBody').innerHTML = `
+    <ul class="bullet-list" lang="en">${makeItems(card.items)}</ul>
+    ${card.details ? `
+      <details>
+        <summary>${esc(card.details.summary)}</summary>
+        <p lang="en">${safeHtml(card.details.text)}</p>
+      </details>` : ''}
+    <button class="seen-check ${isSeen ? 'done' : ''}"
+      data-seen-id="${card.id}" onclick="markSeen('${card.id}')"
+      style="margin-top:.875rem;width:auto;border-radius:var(--r-sm);padding:.375rem .75rem;font-size:.8125rem;font-weight:600">
+      ${isSeen ? '✓ Lu' : 'Marquer comme lu'}
+    </button>`;
+}
+
+/* ── RENDER : STAGES ── */
+function renderStages() {
+  const grid = $('stageGrid');
+  grid.innerHTML = '';
+  (GUIDE_DATA.stages || []).forEach((stage, i) => {
+    const nid = normalizeStage(stage.id);
+    const btn = document.createElement('button');
+    btn.className = 'stage-btn';
+    btn.type      = 'button';
+    btn.setAttribute('role', 'tab');
+    btn.setAttribute('aria-selected', nid === 'complet' ? 'true' : 'false');
+    btn.tabIndex     = nid === 'complet' ? 0 : -1;
+    btn.dataset.stage = nid;
+    btn.innerHTML = `
+      <span class="stage-icon" aria-hidden="true">${esc(stage.icon)}</span>
+      <h3>${esc(stage.title)}</h3>
+      <p>${esc(stage.description)}</p>`;
+    btn.addEventListener('click', () => setStage(nid));
+    btn.addEventListener('keydown', e => {
+      const btns = Array.from(document.querySelectorAll('.stage-btn'));
+      let next = null;
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') next = (i + 1) % btns.length;
+      if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   next = (i - 1 + btns.length) % btns.length;
+      if (next !== null) { e.preventDefault(); btns[next].focus(); setStage(btns[next].dataset.stage); }
+    });
+    grid.appendChild(btn);
+  });
+}
+
+/* ── RENDER : CARDS ── */
+function renderCards() {
+  const wrap = $('cards');
+  wrap.innerHTML = '';
+  const seen = getSeen();
+  (GUIDE_DATA.cards || [])
+    .filter(c => c.id !== 'english_survival_kit')
+    .forEach(card => {
+      const art    = document.createElement('article');
+      const isSeen = seen.includes(card.id);
+      art.className       = 'card' + (isSeen ? ' is-read' : '');
+      art.dataset.cardId  = card.id;
+      art.innerHTML = `
+        <div class="card-body">
+          <div class="card-top">
+            ${makePriorityLabel(card.type)}
+            <button class="seen-check ${isSeen ? 'done' : ''}"
+              data-seen-id="${card.id}" onclick="markSeen('${card.id}')"
+              aria-label="Marquer comme lu">${isSeen ? '✓' : ''}</button>
+          </div>
+          <div class="badges">${makeBadgesHTML(card, currentStage)}</div>
+          <h3>${esc(card.title)}</h3>
+          <p class="card-purpose">${esc(card.purpose)}</p>
+          <ul class="bullet-list">${makeItems(card.items)}</ul>
+          ${card.details ? `
+            <details>
+              <summary>${esc(card.details.summary)}</summary>
+              <p>${safeHtml(card.details.text)}</p>
+            </details>` : ''}
+        </div>`;
+      wrap.appendChild(art);
+    });
+}
+
+/* ── RENDER : AI PANELS ── */
+function renderAi() {
+  $('aiCvText').textContent   = GUIDE_DATA.aiPanels?.cv              || '';
+  $('aiJobText').textContent  = GUIDE_DATA.aiPanels?.jobOffer        || '';
+  $('aiRecoText').textContent = GUIDE_DATA.aiPanels?.recommendations || '';
+}
+
+/* ── RENDER : NOTE ── */
+function renderNote() {
+  $('footerNote').textContent = GUIDE_DATA.footerNote || '';
+}
+
+/* ── RENDER : PATH PANEL ── */
+function renderPath(stage) {
+  const fc = GUIDE_DATA.focusContent || {};
+  const f  = fc[stage] ?? fc[Object.keys(fc).find(k => normalizeStage(k) === stage)] ?? null;
+  $('pathTitle').textContent = f?.title || 'Vue complète';
+  $('pathText').textContent  = f?.text  || '';
+  const list = $('pathList');
+  list.innerHTML = '';
+  (f?.items || []).forEach(item => {
+    const li = document.createElement('li');
+    li.className   = 'path-item';
+    li.textContent = item;
+    list.appendChild(li);
+  });
+}
+
+/* ── FILTERS ── */
+function applyFilters() {
+  const q       = $('searchInput').value.trim().toLowerCase();
+  let visible   = 0;
+  document.querySelectorAll('.card').forEach(el => {
+    const data = (GUIDE_DATA.cards || []).find(c => c.id === el.dataset.cardId);
+    const hide = !cardIsRelevant(data, currentStage)
+              || (Boolean(q) && !el.innerText.toLowerCase().includes(q));
+    el.classList.toggle('hidden', hide);
+    el.setAttribute('aria-hidden', hide ? 'true' : 'false');
+    if (!hide) visible++;
+  });
+  const bar = $('statusBar');
+  bar.innerHTML = (q && visible === 0)
+    ? `<div class="empty-state">Aucune carte pour « ${esc(q)} »</div>`
+    : q ? `${visible} carte${visible > 1 ? 's' : ''} pour « ${q} »` : '';
+}
+
+/* ── SET STAGE ── */
+function setStage(stage) {
+  currentStage = stage;
+  document.querySelectorAll('.stage-btn').forEach(btn => {
+    const active = btn.dataset.stage === stage;
+    btn.setAttribute('aria-selected', String(active));
+    btn.tabIndex = active ? 0 : -1;
+  });
+  renderPath(stage);
+  document.querySelectorAll('.card').forEach(el => {
+    const data     = (GUIDE_DATA.cards || []).find(c => c.id === el.dataset.cardId);
+    const badgesEl = el.querySelector('.badges');
+    if (data && badgesEl) badgesEl.innerHTML = makeBadgesHTML(data, stage);
+  });
+  applyFilters();
+}
+
+/* ── INIT ── */
+function init() {
+  renderMeta();
+  renderInsights();
+  renderUrgent();
+  renderEnglishKit();
+  renderStages();
+  renderCards();
+  renderAi();
+  renderNote();
+  updateProgress();
+  setStage('complet');
+}
+
+$('searchInput').addEventListener('input', applyFilters);
+init();
+</script>
+</body>
+</html>
